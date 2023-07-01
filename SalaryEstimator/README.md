@@ -34,8 +34,10 @@ A(Project planning) -->B(Data collection)
 
 
 ## Data collection
-<div align="justify">
-Data is collected from job hosting websites like glassdoor and gehalt.de using web scrapping. Two popular packages used to scrap web data are 
-*[Link text Here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)'bealútiful soup' and 
-*[Link text Here](https://saucelabs.com/selenium-getting-started?utm_source=google&utm_medium=paidsearch&utm_campaign=emea_google_nonbrand-framework_DE_english&utm_term=selenium&gad=1&gclid=EAIaIQobChMIs_LSrtTt_wIVP4lQBh3eDA0BEAAYASAAEgIOwfD_BwE)'selinium'. In this project selinium is used to scrap web data.
-</div>
+
+Data is collected from job hosting websites like [glassdoor](https://www.glassdoor.com/Job/germany-data-analyst-jobs-SRCH_IL.0,7_IN96_KO8,20.htm) and [gehalt.de](https://www.gehalt.de/) using web scrapping. Two popular packages used to scrap web data are 
+
+* [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) and 
+* [Selenium](https://saucelabs.com/selenium-getting-started?utm_source=google&utm_medium=paidsearch&utm_campaign=emea_google_nonbrand-framework_DE_english&utm_term=selenium&gad=1&gclid=EAIaIQobChMIs_LSrtTt_wIVP4lQBh3eDA0BEAAYASAAEgIOwfD_BwE)
+
+In this project selinium library is used to scrap web data using an existing [python script](https://github.com/arapfaik/scraping-glassdoor-selenium).
