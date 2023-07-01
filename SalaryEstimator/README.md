@@ -31,3 +31,11 @@ A(Project planning) -->B(Data collection)
 8. Conduct thorough testing and validation of the salary estimator.
 9. Ensure accuracy and reliability of the estimator.
 10. Deliver a documented report on the methodology, results, and limitations of the salary estimator. 
+
+
+## Data collection
+<div align="justify">
+Data is collected from job hosting websites like glassdoor and gehalt.de using web scrapping. Two popular packages used to scrap web data are 
+*[Link text Here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)'bealútiful soup' and 
+*[Link text Here](https://saucelabs.com/selenium-getting-started?utm_source=google&utm_medium=paidsearch&utm_campaign=emea_google_nonbrand-framework_DE_english&utm_term=selenium&gad=1&gclid=EAIaIQobChMIs_LSrtTt_wIVP4lQBh3eDA0BEAAYASAAEgIOwfD_BwE)'selinium'. In this project selinium is used to scrap web data.
+</div>
