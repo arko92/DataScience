@@ -19,3 +19,15 @@ A(Project planning) -->B(Data collection)
     E --> F(Model Deployment)
 ```
 
+## Project planning
+
+1. Develop a data-driven salary estimator for data analysts job profiles using data science techniques.
+2. Collect and aggregate relevant salary data, including location, experience, education, and industry from glassdoor using web scrapping
+3. Preprocess and clean the data to ensure quality and integrity.
+4. Perform feature engineering to identify key factors influencing salaries.
+5. Train a predictive model using machine learning algorithms.
+6. Evaluate the model's performance using appropriate metrics.
+7. Build a user-friendly interface for users to input their details and receive salary estimates.
+8. Conduct thorough testing and validation of the salary estimator.
+9. Ensure accuracy and reliability of the estimator.
+10. Deliver a documented report on the methodology, results, and limitations of the salary estimator. 
