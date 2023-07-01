@@ -6,6 +6,9 @@
 The following workflow will be followed to build the salary estimator using data science
 
 ```mermaid
+iframe {
+  color-scheme: normal;
+}
 %%{init: {'theme': 'dark' } }%%
 graph LR
 A(Project planning) -->B(Data collection)
