@@ -9,6 +9,6 @@ import glassdoor_data_scrapper as gs
 
 import pandas as pd
 
-path = "C:/Users/Public/chromedriver_win32"
+path = "C:/Users/Public/chromedriver_win32/chromedriver.exe"
 
 df = gs.get_jobs("Data Analyst", 15, False, path, 15)

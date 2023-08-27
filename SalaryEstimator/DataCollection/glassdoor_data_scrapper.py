@@ -1,16 +1,14 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Jul  1 16:13:41 2023
 
-@author: arkob
-"""
 
 from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
 from selenium import webdriver
 import time
 import pandas as pd
 
-def get_jobs(keyword, num_jobs, verbose,path,sleep_time):
+
+
+
+def get_jobs(keyword, num_jobs, verbose):
     
     '''Gathers jobs as a dataframe, scraped from Glassdoor'''
     
@@ -21,7 +19,7 @@ def get_jobs(keyword, num_jobs, verbose,path,sleep_time):
     #options.add_argument('headless')
     
     #Change the path to where chromedriver is in your home folder.
-    driver = webdriver.Chrome(executable_path=path, options=options)
+    driver = webdriver.Chrome(executable_path="C:/Users/Public/chromedriver_win32/chromedriver", options=options)
     driver.set_window_size(1120, 1000)
 
     url = 'https://www.glassdoor.com/Job/jobs.htm?sc.keyword="' + keyword + '"&locT=C&locId=1147401&locKeyword=San%20Francisco,%20CA&jobType=all&fromAge=-1&minSalary=0&includeNoSalaryJobs=true&radius=100&cityId=-1&minRating=0.0&industryId=-1&sgocId=-1&seniorityType=all&companyId=-1&employerSizes=0&applicationType=0&remoteWorkType=0'
@@ -32,7 +30,7 @@ def get_jobs(keyword, num_jobs, verbose,path,sleep_time):
 
         #Let the page load. Change this number based on your internet speed.
         #Or, wait until the webpage is loaded, instead of hardcoding it.
-        time.sleep(sleep_time)
+        time.sleep(30)
 
         #Test for the "Sign Up" prompt and get rid of it.
         try:
@@ -43,14 +41,19 @@ def get_jobs(keyword, num_jobs, verbose,path,sleep_time):
         time.sleep(.1)
 
         try:
-            driver.find_element_by_class_name("ModalStyle__xBtn___29PT9").click()  #clicking to the X.
+          #diver.find_element_by_class_name("e1jbctw80 ei0fd8p1 css-1n14mz9 e1q8sty40").click()  #clicking to the X.
+          driver.find_element_by_xpath('//button[@class="e1jbctw80 ei0fd8p1 css-1n14mz9 e1q8sty40"]').click()
+
         except NoSuchElementException:
             pass
 
         
         #Going through each job in this page
         job_buttons = driver.find_elements_by_class_name("jl")  #jl for Job Listing. These are the buttons we're going to click.
+        
+        print('one')
         for job_button in job_buttons:  
+            print('two')
 
             print("Progress: {}".format("" + str(len(jobs)) + "/" + str(num_jobs)))
             if len(jobs) >= num_jobs:
@@ -179,10 +182,15 @@ def get_jobs(keyword, num_jobs, verbose,path,sleep_time):
 
         #Clicking on the "next page" button
         try:
+            print('Next passed')
             driver.find_element_by_xpath('.//li[@class="next"]//a').click()
+           #driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div/div[2]/section/article/div[2]/div/div[1]/button[7]/svg').click()
         except NoSuchElementException:
             print("Scraping terminated before reaching target number of jobs. Needed {}, got {}.".format(num_jobs, len(jobs)))
             break
 
     return pd.DataFrame(jobs)  #This line converts the dictionary object into a pandas DataFrame.
 
+
+#This line will open a new chrome window and start the scraping.
+df = get_jobs("data scientist", 5, False)
